@@ -1,0 +1,47 @@
+#include <iostream>
+
+class Complex {
+public:
+    Complex(float a,float b)
+    {
+        a_ = a;
+        b_ = b;
+    }
+    Complex(float a)
+    {
+        a_ = a;
+        b_ = 0;
+    }
+   void set_im(float b)
+   {
+       b_ = b;
+   }
+    Complex add(Complex b)
+    {
+       float x,y;
+       x = a_ + b.a_;
+       y = b_ + b.b_;
+      return Complex(x,y);
+    }
+    void print()
+    {
+        std::cout << a_ << "" << b_ << "i";
+    }
+private:
+    float a_;
+    float b_;
+};
+
+int main()
+{
+    Complex a(1.0, -2.0);
+    Complex b(3.14);
+    b.set_im(-5);
+
+    Complex c = a.add(b);
+    c.print();
+
+
+}
+
+
